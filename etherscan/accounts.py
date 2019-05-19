@@ -72,7 +72,10 @@ class Account(Client):
         self.url_dict[self.OFFSET] = str(offset)
         self.url_dict[self.SORT] = sort
         self.build_url()
-        req = self.connect()
+        try:
+            req = self.connect()
+        except EmptyResponse:
+            req = {'result': []}
         return req['result']
 
     def get_all_transactions(self, offset=10000, sort='asc',

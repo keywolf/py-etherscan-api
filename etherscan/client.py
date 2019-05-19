@@ -116,11 +116,11 @@ class Client(object):
             # Check for empty response
             if req.text:
                 data = req.json()
-                status = data.get('status')
-                if status == '1' or self.check_keys_api(data):
-                    return data
-                else:
-                    raise EmptyResponse(data.get('message', 'no message'))
+                # status = data.get('status')
+                # if status == '1' or self.check_keys_api(data):
+                return data
+            else:
+                raise EmptyResponse('no message')
         raise BadRequest(
             "Problem with connection, status code: %s" % req.status_code)
 
