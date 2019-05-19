@@ -24,6 +24,7 @@ with `YourApiKeyToken` is your provided API key token from EtherScan.io
 To install the package to your computer, simply run the following command in the base directory:
 
     python3 -m pip install py-etherscan-api
+    python3 setup.py install --prefix=/usr/local
 
 ## Available bindings
 
